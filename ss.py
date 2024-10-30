@@ -32,10 +32,11 @@ if j.status_code == 200:
     l = binascii.unhexlify(k)
     m = f(l, d, e)
     n = json.loads(m)
+    
+    # 将整个输出内容转换为base64编码格式
+    output_base64 = base64.b64encode(json.dumps(n).encode('utf-8')).decode('utf-8')
+    
+    # 将base64编码的内容写入ss.txt文件
     with open('ss.txt', 'w', encoding='utf-8') as file:
-        for o in n['data']:
-            p = f"aes-256-cfb:{o['password']}@{o['ip']}:{o['port']}"
-            q = base64.b64encode(p.encode('utf-8')).decode('utf-8')
-            r = f"ss://{q}#{o['title']}"
-            file.write(r + '\n')
-            print(r)
+        file.write(output_base64)
+        print(output_base64)
