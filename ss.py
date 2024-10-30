@@ -5,9 +5,7 @@ import pyaes
 import binascii
 from datetime import datetime
 
-
 print(f"Date   : {datetime.today().strftime('%Y-%m-%d')}")
-
 
 a = 'http://api.skrapp.net/api/serverlist'
 b = {
