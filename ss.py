@@ -25,18 +25,31 @@ def f(g, d, e):
     i = b''.join(h.decrypt(g[j:j+16]) for j in range(0, len(g), 16))
     return i[:-i[-1]]
 
-j = requests.post(a, headers=b, data=c)
-
-if j.status_code == 200:
-    k = j.text.strip()
-    l = binascii.unhexlify(k)
-    m = f(l, d, e)
-    n = json.loads(m)
-    
-    # 将整个输出内容转换为base64编码格式
-    output_base64 = base64.b64encode(json.dumps(n).encode('utf-8')).decode('utf-8')
-    
-    # 将base64编码的内容写入ss.txt文件
-    with open('ss.txt', 'w', encoding='utf-8') as file:
-        file.write(output_base64)
-        print(output_base64)
+try:
+    j = requests.post(a, headers=b, data=c)
+    if j.status_code == 200:
+        k = j.text.strip()
+        l = binascii.unhexlify(k)
+        m = f(l, d, e)
+        n = json.loads(m)
+        
+        # 生成所有的ss://链接
+        ss_links = []
+        for o in n['data']:
+            p = f"aes-256-cfb:{o['password']}@{o['ip']}:{o['port']}"
+            q = base64.b64encode(p.encode('utf-8')).decode('utf-8')
+            r = f"ss://{q}#{o['title']}"
+            ss_links.append(r)
+        
+        # 将所有链接转换为base64编码
+        all_links_base64 = base64.b64encode('\n'.join(ss_links).encode('utf-8')).decode('utf-8')
+        
+        # 将base64编码的内容写入ss.txt文件
+        with open('ss.txt', 'w', encoding='utf-8') as file:
+            file.write(all_links_base64)
+            print(all_links_base64)
+    else:
+        print(f"Failed to retrieve data, status code: {j.status_code}")
+except requests.exceptions.RequestException as e:
+    print(f"An error occurred: {e}")
+    print("Please check the URL and your network connection, and try again.")
