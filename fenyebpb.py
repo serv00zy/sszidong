@@ -11,7 +11,7 @@ BASE_URL = "https://fofa.info/result?qbase64=aWNvbl9oYXNoPSItMTM1NDAyNzMxOSIgJiY
 # 文件名定义
 OUTPUT_FILE_1 = "1.txt"
 OUTPUT_FILE_2 = "2.txt"
-OUTPUT_FILE_OK = "OK.txt"
+OUTPUT_FILE_OK = "OKfenye.txt"
 
 def init_browser():
     """初始化 Selenium 浏览器"""
