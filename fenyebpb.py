@@ -9,8 +9,8 @@ from bs4 import BeautifulSoup
 BASE_URL = "https://fofa.info/result?qbase64=aWNvbl9oYXNoPSItMTM1NDAyNzMxOSIgJiYgYXNuPSIxMzMzNSIgJiYgcG9ydD0iNDQzIg%3D%3D"
 
 # 文件名定义
-OUTPUT_FILE_1 = "1.txt"
-OUTPUT_FILE_2 = "2.txt"
+OUTPUT_FILE_1 = "11.txt"
+OUTPUT_FILE_2 = "22.txt"
 OUTPUT_FILE_OK = "OKfenye.txt"
 
 def init_browser():
