@@ -39,11 +39,17 @@ jobs:
       - name: Install dependencies
         run: |
 
-          pip install requests pyaes   # 安装requests pyaes 
+          pip install requests pyaes selenium beautifulsoup4 packaging   # 安装requests pyaes 
 
 
       - name: Run ss
         run: python ${{ github.workspace }}/ss.py
+
+      - name: Run bpbweifenye
+        run: python ${{ github.workspace }}/weifenyebpb.py
+        
+      - name: Run bpbfenye
+        run: python ${{ github.workspace }}/fenyebpb.py
         
       - name: Commit results
         run: |
