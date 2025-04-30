@@ -14,7 +14,7 @@ b = {
     'appversion': '1.3.1',
     'user-agent': 'SkrKK/1.3.1 (iPhone; iOS 13.5; Scale/2.00)',
     'content-type': 'application/x-www-form-urlencoded',
-    'Cookie': 'PHPSESSID=fnffo1ivhvt0ouo6ebqn86a0d4'
+    'Cookie': 'PHPSESSID=9frhbj5smojt2o0k1djbeluf92'
 }
 c = {'data': '4265a9c353cd8624fd2bc7b5d75d2f18b1b5e66ccd37e2dfa628bcb8f73db2f14ba98bc6a1d8d0d1c7ff1ef0823b11264d0addaba2bd6a30bdefe06f4ba994ed'}
 d = b'65151f8d966bf596'
