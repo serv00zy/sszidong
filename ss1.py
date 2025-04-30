@@ -41,7 +41,7 @@ try:
             
             # 根据实际字段名修改（例如 servers 替代 data）
             for server in parsed_data.get('servers', []):  # 使用 .get() 避免 KeyError
-                ss_url = f"ss://{base64.b64encode(f'aes-256-cfb:{server["password"]}@{server["ip"]}:{server["port"]}').decode()}#{server.get('title', '')}"
+                ss_url = f"ss://{base64.b64encode(f'aes-256-cfb:{server[\"password\"]}@{server[\"ip\"]}:{server[\"port\"]}').decode()}#{server.get('title', '')}"
                 print(ss_url)
                 
             # 写入文件
