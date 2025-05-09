@@ -43,7 +43,7 @@ jobs:
 
 
       - name: Run ss
-        run: python ${{ github.workspace }}/ss2.py
+        run: python ${{ github.workspace }}/ss1.py
 
 
         
